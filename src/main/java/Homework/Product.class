@@ -1,0 +1,62 @@
+package Homework;
+
+public class Product {
+    private String productName;
+    private double price;
+    public void Product(String productName, double price) {
+        this.productName = productName;
+        this.price = price;
+    }
+    public String getProductName() {
+        return productName;
+    }
+    public double getPrice() {
+        return price;
+    }
+    // other methods can be added as needed
+}
+class Customer {
+    private String customerName;
+    private String address;
+    private String email;
+    private String[] purchasedProducts;
+    public Customer(String customerName, String address, String email, String[] purchasedProducts) {
+        this.customerName = customerName;
+        this.address = address;
+        this.email = email;
+        this.purchasedProducts = purchasedProducts;
+    }
+    public String getCustomerName() {
+        return customerName;
+    }
+    public String getAddress() {
+        return address;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public String[] getPurchasedProducts() {
+        return purchasedProducts;
+    }
+    public void setPurchasedProducts(String[] purchasedProducts) {
+        this.purchasedProducts = purchasedProducts;
+    }
+    public void getCustomerInfo() {
+        System.out.println("Customer name: " + customerName);
+        System.out.println("Address: " + address);
+        System.out.println("Email: " + email);
+        System.out.println("Purchased products:");
+        for (Product product : purchasedProducts) {
+            System.out.println("- " + product.getProductName() + " (" + product.getPrice() + ")");
+        }
+    }
+}
+class MainHomework {
+    public static void main(String[] args) {
+        String product1 = new Product1("TV", 9.99);
+        String product2 = new Product2("Laptop", 29.99);
+        String[] purchasedProducts = {product1, product2};
+        Customer customer = new Customer("Monica", "911 Broad St", "monica@gmail.com", purchasedProducts);
+        customer.getCustomerInfo();
+    }
+}
