@@ -45,3 +45,4 @@ public class Staticmethod {
             this.address = address;
         }
     }
+}
