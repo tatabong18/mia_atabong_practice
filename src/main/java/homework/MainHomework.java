@@ -14,9 +14,13 @@ public class MainHomework {
                 "Broad st", "Brooklyn", "NY");
         Address address2 = new Address(false, 419,
                 "Main st", "Bushwick", "NJ");
+        Address address3 = new Address(false, 420,
+                "Bond st", "Bedstuy", "TN");
         Customer customer = new Customer("Mona", "Mona@xyz.com",
                 purchasedProducts);
-        customer.addAddress(new Address[]{address1, address2});
+        customer.addAddress(address1);
+        customer.addAddress(address2);
+        customer.addAddress(address3);
         customer.getCustomerInfo();
 
     }
