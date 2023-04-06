@@ -4,7 +4,7 @@ import contact_Package.Address;
 
 public class Customer {
 
-    private String customerName;
+    private String FirstName;
     private String email;
     private Product[] purchasedProducts;
     private static Address[] customerAddress = new Address[10];
@@ -12,7 +12,7 @@ public class Customer {
 
     public Customer(String customerName,
                     String email, Product[] purchasedProducts) {
-        this.customerName = customerName;
+
         this.email = email;
         this.purchasedProducts = purchasedProducts;
 
@@ -27,7 +27,6 @@ public class Customer {
         this.purchasedProducts = purchasedProducts;
     }
     public void getCustomerInfo() {
-        System.out.println("Customer name: " + customerName);
         System.out.println("Email: " + email);
 //        System.out.println(customerAddress[0].getStreetNumber() + " " +
 //                customerAddress[0].getStreetName() + " " +
