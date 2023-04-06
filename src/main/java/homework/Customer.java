@@ -4,17 +4,26 @@ import contact_Package.Address;
 
 public class Customer {
 
-    private String FirstName;
+    public CustomerName getCustomer_name() {
+        return customer_name;
+    }
+
+    public void setCustomer_name(CustomerName customer_name) {
+        this.customer_name = customer_name;
+    }
+
+    private CustomerName customer_name;
     private String email;
     private Product[] purchasedProducts;
     private static Address[] customerAddress = new Address[10];
     private int trackAddressIndex;
 
-    public Customer(String customerName,
+    public Customer(CustomerName customer_name,
                     String email, Product[] purchasedProducts) {
 
         this.email = email;
         this.purchasedProducts = purchasedProducts;
+        this.customer_name = customer_name;
 
     }
     public String getEmail() {
@@ -27,6 +36,7 @@ public class Customer {
         this.purchasedProducts = purchasedProducts;
     }
     public void getCustomerInfo() {
+        customer_name.getFullName();
         System.out.println("Email: " + email);
 //        System.out.println(customerAddress[0].getStreetNumber() + " " +
 //                customerAddress[0].getStreetName() + " " +

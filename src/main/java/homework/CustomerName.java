@@ -1,14 +1,14 @@
 package homework;
 
-public class Customer_Name {
+public class CustomerName {
 
         private String firstName;
         private String middleName;
         private String lastName;
 
         // Constructor
-        public void CustomerName(String firstName, String middleName,
-                                 String lastName) {
+        public CustomerName(String firstName, String middleName,
+                            String lastName) {
             this.firstName = firstName;
             this.middleName = middleName;
             this.lastName = lastName;
@@ -38,6 +38,10 @@ public class Customer_Name {
 
         public void setLastName(String lastName) {
             this.lastName = lastName;
+        }
+        public void getFullName(){
+            System.out.println("Customer Name: " + firstName + " " + middleName
+            + " " + lastName );
         }
     }
 
