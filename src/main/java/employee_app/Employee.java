@@ -1,13 +1,19 @@
 package employee_app;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 import java.time.LocalDate;
 
 public class Employee {
     private String name;
     private LocalDate hireDate;
     private LocalDate currentDate = LocalDate.now();
+
+    public Employee(String firstName, String lastName, String employeeId) {
+
+    }
+
+    public Employee() {
+
+    }
 
     public String getName() {
         return name;

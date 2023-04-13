@@ -1,8 +1,12 @@
 package array;
 
-import java.util.Arrays;
+import class_practice.ClassA;
 
-public class Main1 {
+public class Main1 extends ClassA {
+    public Main1(String name, int age, String address) {
+        super(name, age, address);
+    }
+
     public static void main(String[] args) {
 
         int[] myIntArray = {1, 2, 3};
@@ -10,7 +14,7 @@ public class Main1 {
 
 
        // for (int i = 0; i < myIntArray.length; i++) {
-        System.out.println(Arrays.toString(myIntArray));
+//     //   System.out.println(Arrays.toString(myIntArray));
          //   System.out.println(myIntArray[i]);
 
 
@@ -20,6 +24,8 @@ public class Main1 {
           //      arr[2] = 3;
            //     for (int i = 0; i < arr.length; i++) {
             //        System.out.println("Array element " + i + " is " + arr[i]);
+        ClassA person1 = new Main1("Mia", 16, "123 myaddress");
+      //  System.out.println(person1.getName());
                 }
             }
 

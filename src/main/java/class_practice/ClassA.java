@@ -1,10 +1,10 @@
 package class_practice;
-public class Person {
+public class ClassA {
     private String name;
     private int age;
     private String address;
 
-    public Person(String name, int age, String address) {
+    public ClassA(String name, int age, String address) {
         this.name = name;
         this.age = age;
         this.address = address;
@@ -14,7 +14,7 @@ public class Person {
         System.out.println("Hello, my name is " + this.name);
     }
 
-    public String getName() {
+    protected String getName() {
         return name;
     }
 
