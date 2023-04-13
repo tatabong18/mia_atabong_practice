@@ -8,15 +8,14 @@ public class HourlyEmployee extends Employee {
         private int hoursWorkedPerMonth;
         private double hourlyRate;
 
-        public HourlyEmployee(String firstName, String lastName, String employeeId, int hoursWorkedPerMonth, double hourlyRate) {
-            super(firstName, lastName, employeeId);
+        public HourlyEmployee(String firstName, String lastName,
+                              String employeeId, int hoursWorkedPerMonth,
+                              double hourlyRate, LocalDate hireDate) {
+            super(firstName, lastName, employeeId,hireDate);
             this.hoursWorkedPerMonth = hoursWorkedPerMonth;
             this.hourlyRate = hourlyRate;
         }
 
-        public HourlyEmployee(String john, LocalDate of, int i, double v) {
-            super();
-        }
 
         // Accessor method to get hoursWorkedPerMonth
         public int getHoursWorkedPerMonth() {

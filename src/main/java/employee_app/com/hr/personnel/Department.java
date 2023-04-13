@@ -97,21 +97,21 @@ import employee_app.Employee;
 public class Department {
     private String name;
     private String location;
-    private Employee[] employees;
-    private int currentIndex;
+    private Employee[] employees =  new Employee[100];
+    private int currentIndex = 0;
+    private int nextAvailableSlotOfEmployeeArray;
+    private int numberOfEmployeesWhoWorked;
 
     public Department(String name, String location) {
         this.name = name;
         this.location = location;
-        employees = new Employee[100];
         currentIndex = 0;
     }
 
     // Method to add an Employee object to the array
     public void addEmployee(Employee employee) {
         if (currentIndex < employees.length) {
-            employees[currentIndex] = employee;
-            currentIndex++;
+            employees[currentIndex++] = employee;
         } else {
             System.out.println("Maximum number of employees reached.");
         }
@@ -144,12 +144,10 @@ public class Department {
     // Method to let employees work and return the number of employees who worked
     public int letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked() {
         int numEmployeesWorked = 0;
-        for (int i = 0; i < currentIndex; i++) {
-            String workResult = employees[i].work();
-            if (workResult.contains("worked")) {
-                numEmployeesWorked++;
+        for (int i = 0; nextAvailableSlotOfEmployeeArray > i; i++)
+            if (employees[i].work().contains("worked")) {
+                numberOfEmployeesWhoWorked++;
             }
-        }
         return numEmployeesWorked;
     }
 }

@@ -7,14 +7,12 @@ import java.time.LocalDate;
 public class SalariedEmployee extends Employee {
     private double monthlySalary;
 
-    public SalariedEmployee(String firstName, String lastName, String employeeId, double monthlySalary) {
-        super(firstName, lastName, employeeId);
+    public SalariedEmployee(String firstName, String lastName, String employeeId,
+                            double monthlySalary, LocalDate hireDate) {
+        super(firstName, lastName, employeeId, hireDate);
         this.monthlySalary = monthlySalary;
     }
 
-    public SalariedEmployee(String mia, LocalDate of, double v) {
-        super();
-    }
 
     // Accessor method to get monthlySalary
     public double getMonthlySalary() {
