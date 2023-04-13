@@ -37,8 +37,11 @@ public class HourlyEmployee extends Employee {
             this.hourlyRate = hourlyRate;
         }
 
-        // Other methods and business logic specific to HourlyEmployee class
-        // ...
+    // Override computeMonthlyCompensation() method from parent Employee class
+    @Override
+    public double computeMonthlyCompensation() {
+        return hourlyRate * hoursWorkedPerMonth;
     }
+}
 
 

@@ -24,6 +24,9 @@ public class SalariedEmployee extends Employee {
         this.monthlySalary = monthlySalary;
     }
 
-    // Other methods and business logic specific to SalariedEmployee class
-    // ...
+    // Override computeMonthlyCompensation() method from parent Employee class
+    @Override
+    public double computeMonthlyCompensation() {
+        return monthlySalary;
+    }
 }

@@ -59,4 +59,7 @@ return ("name = " + firstName + "; hireDate = " + hireDate);
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
+    public double computeMonthlyCompensation() {
+        return 0.0;
+    }
 }
