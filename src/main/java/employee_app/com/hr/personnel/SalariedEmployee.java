@@ -4,7 +4,7 @@ import employee_app.Employee;
 
 import java.time.LocalDate;
 
-public class SalariedEmployee extends Employee {
+public abstract class SalariedEmployee extends Employee {
     private double monthlySalary;
 
     public SalariedEmployee(String firstName, String lastName, String employeeId,
