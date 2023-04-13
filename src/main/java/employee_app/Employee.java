@@ -1,8 +1,7 @@
 package employee_app;
-
 import java.time.LocalDate;
 
-public class Employee {
+public abstract class Employee {
     private String firstName;
     private String lastName;
 
@@ -13,10 +12,6 @@ public class Employee {
     public Employee() {
 
     }
-//    public Employee(String firstName, LocalDate hireDate) {
-//        this.firstName = firstName;
-//        this.hireDate = hireDate;
-//    }
 
     public Employee(String firstName, String lastName,
                     String employeeId, LocalDate hireDate) {
@@ -26,8 +21,6 @@ public class Employee {
         this.hireDate = hireDate;
 
     }
-
-
 
     public String getName() {
         return firstName;
@@ -39,9 +32,9 @@ public class Employee {
     }
 
 
-    public String getEmployeeInfo() {
-return ("name = " + firstName + "; hireDate = " + hireDate);
-    }
+    // Abstract method to get employee information
+    public abstract String getEmployeeInfo();
+
     public String work() {
         return ("Mike worked");
     }
@@ -59,7 +52,8 @@ return ("name = " + firstName + "; hireDate = " + hireDate);
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
-    public double computeMonthlyCompensation() {
-        return 0.0;
-    }
+    // Abstract method to compute monthly compensation
+    public abstract double computeMonthlyCompensation();
 }
+
+
