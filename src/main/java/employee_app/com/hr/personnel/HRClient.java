@@ -10,12 +10,12 @@ public abstract class HRClient {
         Department department = new Department("HR Department",
                 "New York");
 
-//         Create two SalariedEmployee objects
-//        SalariedEmployee employee1 = new SalariedEmployee("Mia", "Abrams",
-//                "56789",100000,LocalDate.of(2002,Month.AUGUST, 07));
-//        SalariedEmployee employee2 = new SalariedEmployee("Nosa",
-//                "Okundaye", "07017",120000,LocalDate.of(2013,
-//                Month.APRIL, 12));
+        // Create two SalariedEmployee objects
+        SalariedEmployee employee1 = new SalariedEmployee("Mia", "Abrams",
+                "56789",100000,LocalDate.of(2002,Month.AUGUST, 07));
+        SalariedEmployee employee2 = new SalariedEmployee("Nosa",
+                "Okundaye", "07017",120000,LocalDate.of(2013,
+                Month.APRIL, 12));
 
         // Create one HourlyEmployee object
 //        HourlyEmployee employee3 = new HourlyEmployee("John",
@@ -26,13 +26,15 @@ public abstract class HRClient {
         // Add Employee objects to the Department object
        Department department1 = new Department("sales",
                "new jersey");
+       department1.addEmployee(employee1);
+       department1.addEmployee(employee2);
 
 
         // Display the result of calling
         // computeDepartmentMonthlyTotalCompensation()
         // method of the Department object
         double departmentMonthlyTotalCompensation =
-                department.computeDepartmentMonthlyTotalCompensation();
+                department1.computeDepartmentMonthlyTotalCompensation();
         System.out.println("Department Monthly Total Compensation:" +
                 " $" + departmentMonthlyTotalCompensation);
     }
