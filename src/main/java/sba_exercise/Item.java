@@ -57,4 +57,9 @@ public class Item {
     public void setAvailableQuantity(Integer availableQuantity) {
         this.availableQuantity = availableQuantity;
     }
+
+    public Object getItemPrice() {
+
+        return price;
+    }
 }

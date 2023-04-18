@@ -1,72 +1,33 @@
 package sba_exercise;
-//import java.io.File;
-//import java.io.FileNotFoundException;
-//import java.util.Scanner;
-//
-//public class Main {
-//    public static void main(String[] args) {
-//        System.out.println("----------- Testing reading sample.txt -----");
-//        System.out.printf("%-20s %-20s %-10s %-10s\n", "Name", "Description", "Price", "Quantity Available");
-//        try {
-//            File file = new File("sample.txt");
-//            Scanner scanner = new Scanner(file);
-//            while (scanner.hasNextLine()) {
-//                String line = scanner.nextLine();
-//                String[] items = line.split("\\s{2}");
-//                String name = items[0];
-//                String description = items[1];
-//                double price = Double.parseDouble(items[2]);
-//                int quantity = Integer.parseInt(items[3]);
-//                System.out.printf("%-20s %-20s %-10.2f %-10d\n", name, description, price, quantity);
-//            }
-//            scanner.close();
-//            // default exception handler
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//}
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("----------- Testing reading sample.txt -----");
-        System.out.printf("%-20s %-20s %-10s %-10s\n",
-                "Name", "Description", "Price", "Quantity Available");
-        try {
-            File file = new File("sample.txt");
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] items = line.split("\\s{2}");
-                String name = items[0];
-                String description = items[1];
-                double price = Double.parseDouble(items[2]);
-                int quantity = Integer.parseInt(items[3]);
-                System.out.printf("%-20s %-20s %-10.2f %-10d\n",
-                        name, description, price, quantity);
-            }
-            scanner.close();
-            // default exception handler
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        // Testing the constructor of MySystem class
+        System.out.println("----------- Testing the constructor of MySystem class -----");
+        MySystem mySystem = new MySystem();
+        mySystem.displayItems();
+
+        // Testing addItem method
+        System.out.println("----------- Testing addItem(..) method -----");
+        System.out.println("size before adding a new item = " + mySystem.getMyItemsInHashMap().size());
+        Item newItem = new Item("oatmeal", "too healthy", 20.00, 10);
+        Item addedItem = mySystem.addItem(newItem);
+        if (addedItem != null) {
+            System.out.println("size after adding a new item = " + mySystem.getMyItemsInHashMap().size());
+            mySystem.displayItems();
         }
 
-        System.out.println("\n----------- Testing the constructor " +
-                "of Item class -----");
-        Item item = new Item("Jollof Rice",
-                "Very yummy",
-                16.00,
-                12);
-        System.out.printf("%-20s %-20s %-10.2f %-10d %-10d\n",
-                item.getItemName(),
-                item.getItemDescription(),
-                item.getPrice(),
-                item.getQuantity(),
-                item.getAvailableQuantity());
+        System.out.println("size before adding an existing item = " + mySystem.getMyItemsInHashMap().size());
+        Item existingItem = new Item("salad", "cobb salad", 15.50, 12);
+        Item addedExistingItem = mySystem.addItem(existingItem);
+        if (addedExistingItem == null) {
+            System.out.println("size after adding an existing item = " + mySystem.getMyItemsInHashMap().size());
+            mySystem.displayItems();
+        }
     }
 }
