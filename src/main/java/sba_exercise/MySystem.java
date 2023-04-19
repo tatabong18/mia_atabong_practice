@@ -55,4 +55,12 @@ public class MySystem {
                     item.getItemPrice(), item.getAvailableQuantity());
         }
     }
+
+    public Item removeItem(String itemName) {
+        Item removedItem = myItemsInHashMap.remove(itemName);
+        if (removedItem == null) {
+            System.out.println(itemName + " not found in the system.");
+        }
+        return removedItem;
+    }
 }
