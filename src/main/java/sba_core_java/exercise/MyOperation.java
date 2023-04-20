@@ -11,8 +11,8 @@ public abstract class MyOperation implements IMyOperations {
 
     @Override
     public void convertStringArrayIntoArrayList(String[] stringArray) {
-        for (String str : stringArray) {
-            myArrayList.add(str);
+        for (String string : stringArray) {
+            myArrayList.add(string);
         }
     }
 

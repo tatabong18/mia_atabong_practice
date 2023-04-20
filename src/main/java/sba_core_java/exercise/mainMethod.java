@@ -1,6 +1,5 @@
 package sba_core_java.exercise;
 import java.util.Scanner;
-
 import java.util.ArrayList;
 
 public class mainMethod {
@@ -8,21 +7,24 @@ public class mainMethod {
     public static void main(String[] args) {
         String[] myStringArrayTestValue = {"life", "is", "worth",
                 "living", "with", "passion"};
-        MyOperation myOp;
-        myOp = new MyOperation() {
+        MyOperation myOperation;
+        myOperation = new MyOperation() {
             @Override
-            public void replaceAnElementInTheStringArrayListGiven(int index) {
+            public void replaceAnElementInTheStringArrayListGiven
+                    (int index) {
 
             }
         };
-        myOp.convertStringArrayIntoArrayList(myStringArrayTestValue);
-        System.out.println(myOp.getMyArrayList());
+        myOperation.convertStringArrayIntoArrayList
+                (myStringArrayTestValue);
+        System.out.println(myOperation.getMyArrayList());
 
-        myOp.replaceAnElementInTheStringArrayListGiven(1);
-        System.out.println(myOp.getMyArrayList());
+        myOperation.replaceAnElementInTheStringArrayListGiven
+                (1);
+        System.out.println(myOperation.getMyArrayList());
 
         ArrayList<String> myNewArrayList =
-                myOp.createANewArrayListFromExistingArray();
+                myOperation.createANewArrayListFromExistingArray();
         System.out.println(myNewArrayList);
 
         Scanner scanner = new Scanner(System.in);
