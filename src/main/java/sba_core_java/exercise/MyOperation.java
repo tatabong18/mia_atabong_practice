@@ -21,7 +21,7 @@ public abstract class MyOperation implements IMyOperations {
         ArrayList<String> newArrayList = new ArrayList<>(myArrayList);
         newArrayList.removeIf(str -> str.equals("Nah"));
         return newArrayList;
-}
+    }
 
     public ArrayList<String> getMyArrayList() {
         return myArrayList;

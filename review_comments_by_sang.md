@@ -16,3 +16,15 @@ weekly 1-1.
   better coding practice now since you use
   an ArrayList object rather than an array
 - Employee class is still in the wrong package (minor)
+
+## April 24th (Monday)
+
+- "sba_core_java/exercise1"
+  - packaging structure needs to be improved
+  - indentation is incorrect
+  - replaceAnElementInTheStringArrayListGiven is not implemented
+
+- "sba_core_java/exercise2"
+  - calculate average is not implemented
+  - sendPlayerToMinorLeague(..) implemented incorrectly
+  - transferPlayerToDifferentTeam(..) implemented incorrectly
