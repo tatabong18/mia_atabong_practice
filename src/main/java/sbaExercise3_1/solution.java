@@ -1,11 +1,16 @@
 package sbaExercise3_1;
 
 //// <<<<<======== Click here to expand the locked stub code
-import java.util.*;
 
-interface MyList{
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
+interface MyList {
     void convert(String[] a);
+
     void replace(int idx);
+
     ArrayList<String> compact();
 }
 
@@ -46,7 +51,7 @@ class ArrayToList implements MyList {
 
         for (int i = 0; i < a.length; i++) {
             arrayToList.add(a[i]);
-            String x = " I have added the string: "
+            String x = "I have added the string: "
                     + a[i]
                     + " at the index: "
                     + i;
@@ -69,27 +74,22 @@ class ArrayToList implements MyList {
 
     @Override
     public ArrayList<String> compact() {
-       ArrayList<String> newArrayList = new ArrayList<>();
-       for (String s: arrayToList) {
-           if (s.equals("")) {
-               newArrayList.add(s);
-           }
-       }
+        ArrayList<String> newArrayList = new ArrayList<>();
+        for (String s : arrayToList) {
+            if (!s.equals("")) {
+                newArrayList.add(s);
+            }
+        }
         return newArrayList;
     }
 }
-
-
-
-
-
 
 
 // <<<<<======== Click here to expand the locked stub. Please take a look at the locked stub code to better understand how your implementation of the required classes will be validated.
 //PlEASE DO NOT ATTEMPT TO MODIFY THE CODE BELOW !!!!!!.
 public class solution {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         Random rand = new Random(0);
@@ -97,27 +97,27 @@ public class solution {
         int n = Integer.parseInt(sc.nextLine());
         String[] a = new String[n];
 
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
             a[i] = sc.nextLine();
 
         MyList obj = new ArrayToList();
 
         obj.convert(a);
         int x = rand.nextInt(n);
-        for(int i = 0; i < x; i++)
+        for (int i = 0; i < x; i++)
             obj.replace(rand.nextInt(n));
 
 
         ArrayList<String> s = obj.compact();
 
 
-
-        for (int i = 0; i < s.size(); i++){
-            if(s.get(i).charAt(0) >= 97 && s.get(i).charAt(0) <= 122){
-                try{
+        for (int i = 0; i < s.size(); i++) {
+            if (s.get(i).charAt(0) >= 97 && s.get(i).charAt(0) <= 122) {
+                try {
                     throw new InvalidStringException("This is an invalid string");
+                } catch (InvalidStringException e) {
+                    System.out.println(e.getMessage());
                 }
-                catch(InvalidStringException e){System.out.println(e.getMessage());}
             }
         }
 

@@ -93,7 +93,7 @@ class Football implements Sport {
             sum += age[i];
         }
         double averageAge = sum / age.length;
-        String x = "The average age of team is "
+        String x = "The average age of the team is "
                 + averageAge;
         System.out.printf("The average age of the team is %.2f %n",
                 averageAge);
